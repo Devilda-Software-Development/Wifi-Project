@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('routers', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('namaRouter');
-            $table->string('ip_adress');
+        Schema::create('news', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('routers');
+        Schema::dropIfExists('news');
     }
 };

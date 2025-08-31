@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'price'];
 
-    public function users()
+    public function subscriptions()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Subscription::class);
     }
 }
