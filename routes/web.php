@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\Admin\AuthController;
-use App\Http\Controllers\Admin\ComplaintControlle;
-use App\Http\Controllers\Admin\NewsController;
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\SubscriptionController;
-use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ComplaintController;
+
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SubscriptionController;
 
 
 /*
@@ -20,8 +22,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/admin/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Dashboard Routes
+Route::prefix('admin/dashboard')->name('admin.dashboard.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 });
 
 // User Routes
@@ -38,6 +46,12 @@ Route::prefix('admin/news')->name('admin.news.')->group(function () {
     Route::post('/', [NewsController::class, 'store'])->name('store');
     Route::put('/{id}', [NewsController::class, 'update'])->name('update');
     Route::delete('/{id}', [NewsController::class, 'destroy'])->name('destroy');
+});
+
+// Complaint Routes
+Route::prefix('admin/complaints')->name('admin.complaints.')->group(function () {
+    Route::get('/', [ComplaintController::class, 'index'])->name('index');
+    Route::get('/{id}', [ComplaintController::class, 'show'])->name('show');
 });
 
 // Service Routes

@@ -12,7 +12,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all()->sortByDesc('created_at');
-        return view('admin.pages.news', [
+        return view('admin.pages.news.news', [
             'news' => $news
         ]);
     }

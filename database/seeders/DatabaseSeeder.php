@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             DetailComplaintSeeder::class,
             BillSeeder::class,
             PaymentSeeder::class,
+            NewsSeeder::class,
         ]);
     }
 }

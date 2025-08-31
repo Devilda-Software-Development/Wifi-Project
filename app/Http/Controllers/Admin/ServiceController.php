@@ -11,7 +11,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('admin.pages.services', [
+        return view('admin.pages.service.service', [
             'services' => $services
         ]);
     }
