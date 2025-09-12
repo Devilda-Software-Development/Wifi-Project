@@ -15,8 +15,8 @@
                   <span class="position-absolute top-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
               </span>
               <div class="flex-grow-1 ps-2">
-                  <h6 class="text-primary mb-0">Ninfa Monaldo</h6>
-                  <p class="text-muted f-s-12 mb-0">Web Developer</p>
+                  <h6 class="text-primary mb-0">{{ Auth::user()->name }}</h6>
+                  <p class="text-muted f-s-12 mb-0">{{ Auth::user()->role->name }}</p>
               </div>
 
               <div class="dropdown profile-menu-dropdown">
@@ -61,7 +61,7 @@
                       <li class="app-divider-v dotted py-1"></li>
 
                       <li class="dropdown-item">
-                          <a class="mb-0 text-danger" href="sign_in.html" target="_blank">
+                          <a class="mb-0 text-danger" href="/admin/logout">
                               <i class="ph-duotone ph-sign-out pe-1 f-s-20"></i> Log Out
                           </a>
                       </li>

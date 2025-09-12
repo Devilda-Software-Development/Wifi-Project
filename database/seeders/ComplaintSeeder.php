@@ -23,7 +23,7 @@ class ComplaintSeeder extends Seeder
                 'created_at' => now()->subDays(3),
             ],
             [
-                'user_id' => 3,
+                'user_id' => 1,
                 'service_id' => 2,
                 'subject' => 'Tagihan Tidak Sesuai',
                 'description' => 'Jumlah tagihan lebih besar dari biasanya.',

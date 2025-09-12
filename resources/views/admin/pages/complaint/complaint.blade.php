@@ -66,7 +66,7 @@
                                             </td>
                                             <td>{{ $complaint->created_at->format('Y-m-d') }}</td>
                                             <td>
-                                                <a href=""
+                                                <a href="{{ route('admin.complaints.show', $complaint->id) }}"
                                                     class="btn btn-light-info icon-btn b-r-4" title="Detail">
                                                     <i class="ti ti-eye"></i>
                                                 </a>

@@ -22,10 +22,10 @@ use App\Http\Controllers\Admin\SubscriptionController;
 |
 */
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
-Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'index']);
 Route::post('/admin/login', [AuthController::class, 'login'])->name('login.post');
-Route::post('/admin/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboard Routes
 Route::prefix('admin/dashboard')->name('admin.dashboard.')->group(function () {
@@ -52,6 +52,7 @@ Route::prefix('admin/news')->name('admin.news.')->group(function () {
 Route::prefix('admin/complaints')->name('admin.complaints.')->group(function () {
     Route::get('/', [ComplaintController::class, 'index'])->name('index');
     Route::get('/{id}', [ComplaintController::class, 'show'])->name('show');
+    Route::post('/{id}/message', [ComplaintController::class, 'addMessage'])->name('addMessage');
 });
 
 // Service Routes
