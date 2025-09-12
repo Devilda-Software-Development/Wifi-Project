@@ -37,7 +37,7 @@
                         </p>
                         <button class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal"
                             data-bs-target="#addServiceModal">
-                            <i class="ti ti-plus"></i> Add Service
+                            <i class="ti ti-plus m-2"></i> Add Service
                         </button>
                     </div>
                     <div class="card-body p-0">

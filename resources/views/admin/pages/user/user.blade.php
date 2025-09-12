@@ -35,7 +35,7 @@
                             <code>$().DataTable();</code>.
                         </p>
                         <button class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#addUserModal">
-                            <i class="ti ti-plus"></i> Add User
+                            <i class="ti ti-plus m-2"></i> Add User
                         </button>
                     </div>
                     <div class="card-body p-0">

@@ -33,7 +33,7 @@
                         </p>
                         <a href="#" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal"
                             data-bs-target="#addNewsModal">
-                            <i class="ti ti-plus"></i> Add News
+                            <i class="ti ti-plus m-2"></i> Add News
                         </a>
                     </div>
                     <div class="card-body p-0">
