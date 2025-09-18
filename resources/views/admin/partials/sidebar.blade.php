@@ -100,6 +100,26 @@
                   </a>
               </li>
               <li class="no-sub mb-2">
+                  <a aria-expanded="{{ request()->is('admin/subscriptions') ? 'true' : 'false' }}"
+                      href="/admin/subscriptions">
+                      <i class="ph-duotone ph-bookmark-simple pe-1 f-s-20" style="margin-right: 8px;"></i>
+                      Subscriptions
+                  </a>
+              </li>
+              <li class="no-sub mb-2">
+                    <a aria-expanded="{{ request()->is('admin/bills') ? 'true' : 'false' }}" href="/admin/bills">
+                        <i class="ph-duotone ph-paper-plane-tilt pe-1 f-s-20" style="margin-right: 8px;"></i>
+                        Bills
+                    </a>
+              </li>
+              <li class="no-sub mb-2">
+                  <a aria-expanded="{{ request()->is('admin/payments') ? 'true' : 'false' }}" href="/admin/payments">
+                      <i class="ph-duotone ph-credit-card pe-1 f-s-20" style="margin-right: 8px;"></i>
+                      Payments
+                  </a>
+              </li>
+
+              <li class="no-sub mb-2">
                   <a aria-expanded="{{ request()->is('admin/users') ? 'true' : 'false' }}" href="/admin/users">
                       <i class="ph-duotone ph-users pe-1 f-s-20" style="margin-right: 8px;"></i>
                       Users

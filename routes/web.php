@@ -6,7 +6,8 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ComplaintController;
-
+use App\Http\Controllers\Admin\BillController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SubscriptionController;
 
@@ -69,4 +70,22 @@ Route::prefix('admin/subscriptions')->name('admin.subscriptions.')->group(functi
     Route::post('/', [SubscriptionController::class, 'store'])->name('store');
     Route::put('/{id}', [SubscriptionController::class, 'update'])->name('update');
     Route::delete('/{id}', [SubscriptionController::class, 'destroy'])->name('destroy');
+    Route::get('/{id}/detail', [SubscriptionController::class, 'detail'])->name('detail');
+});
+
+// Bill Routes
+Route::prefix('admin/bills')->name('admin.bills.')->group(function () {
+    Route::get('/', [BillController::class, 'index'])->name('index');
+    Route::post('/', [BillController::class, 'store'])->name('store');
+    Route::put('/{id}', [BillController::class, 'update'])->name('update');
+    Route::delete('/{id}', [BillController::class, 'destroy'])->name('destroy');
+    Route::post('/generate', [BillController::class, 'generateMonthlyBills'])->name('generate');
+});
+
+// Payment Routes
+Route::prefix('admin/payments')->name('admin.payments.')->group(function () {
+    Route::get('/', [PaymentController::class, 'index'])->name('index');
+    Route::post('/', [PaymentController::class, 'store'])->name('store');
+    Route::put('/{id}', [PaymentController::class, 'update'])->name('update');
+    Route::delete('/{id}', [PaymentController::class, 'destroy'])->name('destroy');
 });

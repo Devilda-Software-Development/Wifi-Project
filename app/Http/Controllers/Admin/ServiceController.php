@@ -16,11 +16,6 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        return view('admin.pages.create-service');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -42,14 +37,6 @@ class ServiceController extends Controller
         $service->save();
 
         return redirect()->route('admin.services.index')->with('success', 'Service created successfully.');
-    }
-
-    public function edit($id)
-    {
-        $service = Service::findOrFail($id);
-        return view('admin.pages.edit-service', [
-            'service' => $service
-        ]);
     }
 
     public function update(Request $request, $id)
