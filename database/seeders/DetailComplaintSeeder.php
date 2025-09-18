@@ -16,13 +16,13 @@ class DetailComplaintSeeder extends Seeder
         DetailComplaint::insert([
             [
                 'complaint_id' => 1,
-                'user_id' => 2,
+                'user_id' => 1,
                 'message' => 'Mohon segera dibenahi.',
                 'created_at' => now()->subDays(3),
             ],
             [
                 'complaint_id' => 1,
-                'user_id' => 1,
+                'user_id' => 3,
                 'message' => 'Akan kami cek, mohon tunggu.',
                 'created_at' => now()->subDays(2),
             ],
@@ -34,7 +34,7 @@ class DetailComplaintSeeder extends Seeder
             ],
             [
                 'complaint_id' => 2,
-                'user_id' => 1,
+                'user_id' => 2,
                 'message' => 'Tagihan sudah dikoreksi.',
                 'created_at' => now()->subDays(6),
             ]
