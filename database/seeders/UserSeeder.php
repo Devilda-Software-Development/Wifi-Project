@@ -13,25 +13,30 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::insert([
-            'name' => 'daffa',
-            'email' => 'daffa@gmail.com',
-            'password' => bcrypt('1'),
-            'role_id' => 2,
+        $fakePelanggan = User::factory(10)->create();
+        $fakePelanggan->each(function ($user) {
+            $user->assignRole(User::ROLE_PELANGGAN);
+        });
+
+        $superadmin = User::factory()->create([
+            'name' => 'Superadmin',
+            'email' => 'superadmin@example.com',
         ]);
 
-        User::insert([
-            'name' => 'Ilham Ibnu Ahmad',
-            'email' => 'ilham@gmail.com',
-            'password' => bcrypt('1'),
-            'role_id' => 2,
+        $superadmin->assignRole(User::ROLE_SUPERADMIN);
+
+        $adminKoordinator = User::factory()->create([
+            'name' => 'Admin Koordinator',
+            'email' => 'koordinator@example.com',
         ]);
 
-        User::insert([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('1'),
-            'role_id' => 1,
+        $adminKoordinator->assignRole(User::ROLE_ADMIN_KOORDINATOR);
+
+        $adminFinance = User::factory()->create([
+            'name' => 'Admin Finance',
+            'email' => 'finance@example.com',
         ]);
+
+        $adminFinance->assignRole(User::ROLE_ADMIN_FINANCE);
     }
 }

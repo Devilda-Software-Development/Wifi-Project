@@ -16,7 +16,7 @@
               </span>
               <div class="flex-grow-1 ps-2">
                   <h6 class="text-primary mb-0">{{ Auth::user()->name }}</h6>
-                  <p class="text-muted f-s-12 mb-0">{{ Auth::user()->role->name }}</p>
+                  <p class="text-muted f-s-12 mb-0">{{ Auth::user()->roles->pluck('name')->implode(', ') }}</p>
               </div>
 
               <div class="dropdown profile-menu-dropdown">
@@ -107,10 +107,10 @@
                   </a>
               </li>
               <li class="no-sub mb-2">
-                    <a aria-expanded="{{ request()->is('admin/bills') ? 'true' : 'false' }}" href="/admin/bills">
-                        <i class="ph-duotone ph-paper-plane-tilt pe-1 f-s-20" style="margin-right: 8px;"></i>
-                        Bills
-                    </a>
+                  <a aria-expanded="{{ request()->is('admin/bills') ? 'true' : 'false' }}" href="/admin/bills">
+                      <i class="ph-duotone ph-paper-plane-tilt pe-1 f-s-20" style="margin-right: 8px;"></i>
+                      Bills
+                  </a>
               </li>
               <li class="no-sub mb-2">
                   <a aria-expanded="{{ request()->is('admin/payments') ? 'true' : 'false' }}" href="/admin/payments">
