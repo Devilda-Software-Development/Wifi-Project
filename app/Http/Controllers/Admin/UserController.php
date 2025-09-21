@@ -6,12 +6,13 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Hashing\BcryptHasher;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::where('role_id', '!=', 1)->get();
+        $users = User::with('roles')->where('id', '!=', Auth::id())->get();
         return view('admin.pages.user.user', [
             'users' => $users
         ]);
