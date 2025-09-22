@@ -25,7 +25,7 @@ use App\Models\User;
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
-    Route::get('/login', [AuthController::class, 'index']);
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/admin/login', [AuthController::class, 'login'])->name('login.post');
 });
 
